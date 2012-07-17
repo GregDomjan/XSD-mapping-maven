@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+	  <groupId>com.codesynthesis.xsd</groupId>
+	  <artifactId>xsd-mapping</artifactId>
+	  <version>3.3.0-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>mapping-tools</artifactId>
+  <packaging>pom</packaging>
+  
+  <name>Code Synthesis XSD mapping to C++ tools</name>
+
+  <url>http://www.codesynthesis.com/projects/xsd/</url>
+  <description>CodeSynthesis XSD is a W3C XML Schema to C++ translator. It generates vocabulary-specific, statically-typed C++ mappings (also called bindings) from XML Schema definitions. XSD supports two C++ mappings: in-memory C++/Tree and event-driven C++/Parser.
+
+The C++/Tree mapping consists of C++ classes that represent data types defined in XML Schema, a set of parsing functions that convert XML documents to a tree-like in-memory object model, and a set of serialization functions that convert the object model back to XML.
+
+The C++/Parser mapping provides parser skeletons for data types defined in XML Schema. Using these parser skeletons you can build your own in-memory representations or perform immediate processing of XML documents.
+
+Packaging of OS specific native tools.
+see mapping-maven-plugin for maven usage.</description>
+  <organization>
+  	<url>http://www.codesynthesis.com/</url>
+  	<name>Code Synthesis</name>
+  </organization>
+
+  <!-- May need to list dependency on system runtime libs 
+  <dependencies>
+    <dependency>
+    </dependency>
+  </dependencies>
+  -->
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+					<execution>
+						<id>win-resources</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/windows</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.basedir}/src/resources/Windows</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>mac-resources</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/MacOSX</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.basedir}/src/resources/MacOSX</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.2</version>
+				<executions>
+					<execution>
+						<id>default-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<classifier>windows</classifier>
+							<classesDirectory>${project.build.directory}/windows</classesDirectory>
+						</configuration>
+					</execution>
+					<execution>
+						<id>mac-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<classifier>MacOSX</classifier>
+							<classesDirectory>${project.build.directory}/MacOSX</classesDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+    
+</project>

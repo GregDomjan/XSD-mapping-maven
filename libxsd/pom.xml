@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+	  <groupId>com.codesynthesis.xsd</groupId>
+	  <artifactId>xsd-mapping</artifactId>
+	  <version>3.3.0-SNAPSHOT</version>
+  </parent>
+ 
+  <artifactId>libxsd</artifactId>
+  <packaging>nar</packaging>
+
+  <name>Code Synthesis XSD mapping to C++ library</name>
+
+  <url>http://www.codesynthesis.com/projects/xsd/</url>
+  
+  <description>CodeSynthesis XSD is a W3C XML Schema to C++ translator. It generates vocabulary-specific, statically-typed C++ mappings (also called bindings) from XML Schema definitions. XSD supports two C++ mappings: in-memory C++/Tree and event-driven C++/Parser.
+
+This artifact is the library of headers which should be included in your imports when using the classes generated from mapping-maven-plugin.</description>
+
+  <organization>
+  	<url>http://www.codesynthesis.com/</url>
+  	<name>Code Synthesis</name>
+  </organization>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-nar-plugin</artifactId>
+        <version>2.1-SNAPSHOT</version>
+        <extensions>true</extensions>
+        <configuration>
+          <os>Windows</os>
+          <linkers>
+          	<linker>
+          	  <name>msvc</name>
+          	</linker>
+          </linkers>
+		  <libraries>
+            <library>
+              <type>none</type>
+            </library>
+		  </libraries>
+		</configuration>
+		</plugin>
+	  </plugins>
+  </build>
+  
+</project>

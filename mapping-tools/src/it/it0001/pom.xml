@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.codesynthesis.xsd</groupId>
+  <artifactId>it0001</artifactId>
+  <packaging>jar</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Code Synthesis XSD mapping to C++ plugin</name>
+
+  <url>http://www.codesynthesis.com/projects/xsd/</url>
+  <description></description>
+  <organization>
+  	<url>http://www.codesynthesis.com/</url>
+  	<name>Code Synthesis</name>
+  </organization>
+
+  <!-- May need to list dependency on system runtime libs -->
+  
+  <build>
+    <plugins>
+      <plugin>
+    	<groupId>com.codesynthesis.xsd</groupId>
+    	<artifactId>mapping-maven-plugin</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+        <executions>
+			<execution>
+				<id>default</id>
+				<goals>
+					<goal>cxx-tree</goal>
+				</goals>
+				<configuration>
+					<verbose>true</verbose>
+					<name>foooooo</name>
+				</configuration>
+			</execution>
+		</executions>
+      </plugin>
+	</plugins>
+  </build>
+
+</project>
