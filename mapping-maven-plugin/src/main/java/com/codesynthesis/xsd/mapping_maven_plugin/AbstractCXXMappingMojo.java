@@ -373,8 +373,10 @@ public abstract class AbstractCXXMappingMojo extends AbstractMappingMojo {
 	protected void generateTree( Set<String> files, File toolDirectory)
 			throws MojoExecutionException {
 		
-	    Commandline cl = new Commandline( toolDirectory.getAbsolutePath() + "/bin/xsd " + mappingType() );	
-				    
+	    Commandline cl = new Commandline();
+	    cl.setExecutable( toolDirectory.getAbsolutePath() + "/bin/xsd");
+	    cl.addArguments(new String[]{ mappingType()} );	
+
 	    addLicensing(cl);
 	    addOptions(cl);
 	    cl.addArguments(getOptions());
