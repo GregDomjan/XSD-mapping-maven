@@ -1,20 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  
-  <parent>
-	  <groupId>com.codesynthesis.xsd</groupId>
-	  <artifactId>xsd-mapping</artifactId>
-	  <version>3.3.0-SNAPSHOT</version>
-  </parent>
-  
-  <artifactId>mapping-tools</artifactId>
-  <packaging>pom</packaging>
-  
-  <name>Code Synthesis XSD mapping to C++ tools</name>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <url>http://www.codesynthesis.com/projects/xsd/</url>
-  <description>CodeSynthesis XSD is a W3C XML Schema to C++ translator. It generates vocabulary-specific, statically-typed C++ mappings (also called bindings) from XML Schema definitions. XSD supports two C++ mappings: in-memory C++/Tree and event-driven C++/Parser.
+	<parent>
+		<groupId>com.codesynthesis.xsd</groupId>
+		<artifactId>xsd-mapping</artifactId>
+		<version>4.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>mapping-tools</artifactId>
+	<packaging>pom</packaging>
+
+	<name>Code Synthesis XSD mapping to C++ tools</name>
+
+	<url>http://www.codesynthesis.com/projects/xsd/</url>
+	<description>CodeSynthesis XSD is a W3C XML Schema to C++ translator. It generates vocabulary-specific, statically-typed C++ mappings (also called bindings) from XML Schema definitions. XSD supports two C++ mappings: in-memory C++/Tree and event-driven C++/Parser.
 
 The C++/Tree mapping consists of C++ classes that represent data types defined in XML Schema, a set of parsing functions that convert XML documents to a tree-like in-memory object model, and a set of serialization functions that convert the object model back to XML.
 
@@ -22,17 +22,11 @@ The C++/Parser mapping provides parser skeletons for data types defined in XML S
 
 Packaging of OS specific native tools.
 see mapping-maven-plugin for maven usage.</description>
-  <organization>
-  	<url>http://www.codesynthesis.com/</url>
-  	<name>Code Synthesis</name>
-  </organization>
+	<organization>
+		<url>http://www.codesynthesis.com/</url>
+		<name>Code Synthesis</name>
+	</organization>
 
-  <!-- May need to list dependency on system runtime libs 
-  <dependencies>
-    <dependency>
-    </dependency>
-  </dependencies>
-  -->
 	<build>
 		<plugins>
 			<plugin>
@@ -101,5 +95,4 @@ see mapping-maven-plugin for maven usage.</description>
 			</plugin>
 		</plugins>
 	</build>
-    
 </project>
