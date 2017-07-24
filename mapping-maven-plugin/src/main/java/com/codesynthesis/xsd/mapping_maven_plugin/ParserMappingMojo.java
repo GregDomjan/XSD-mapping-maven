@@ -34,28 +34,28 @@ public class ParserMappingMojo
 	/**
 	 * Generate validation code which ensures that instance documents conform to the schema. This is the default for the Expat XML parser.
 	 * 
-	 * @parameter expression="${mapping.genValidation}" default-value="false"
+	 * @parameter property="mapping.genValidation" default-value="false"
 	 */
 	private boolean genValidation;
 
 	/**
 	 * Suppress generation of validation code. This is the default for the Xerces-C++ XML parser.
 	 * 
-	 * @parameter expression="${mapping.supValidation}" default-value="false"
+	 * @parameter property="mapping.supValidation" default-value="false"
 	 */
 	private boolean supValidation;
 	
 	/**
 	 * Use the provided suffix to construct the names of generated parser skeleton file.
 	 * 
-	 * @parameter expression="${mapping.skelFileSuffix}" default-value="-pskel"
+	 * @parameter property="mapping.skelFileSuffix" default-value="-pskel"
 	 */
 	private String skelFileSuffix;
 	
 	/**
 	 * Use the provided suffix to construct the names of generated parser skeletons.
 	 * 
-	 * @parameter expression="${mapping.skelTypeSuffix}" default-value="_pskel"
+	 * @parameter property="mapping.skelTypeSuffix" default-value="_pskel"
 	 */
 	private String skelTypeSuffix;
 	
@@ -66,7 +66,7 @@ public class ParserMappingMojo
 	 * xerces - (default) 0
 	 * expat - expat,1
 	 * 
-	 * @parameter expression="${mapping.xmlParser}" default-value=""
+	 * @parameter property="mapping.xmlParser" default-value=""
 	 */
 //	private XMLParser xmlParser;
 	private String xmlParser;

@@ -34,84 +34,84 @@ public class TreeMappingMojo
 	/**
 	 * Generate a separate header file with forward declarations for the types being generated.
 	 * 
-	 * @parameter expression="${mapping.genForward}" default-value="false"
+	 * @parameter property="mapping.genForward" default-value="false"
 	 */
 	private boolean genForward;
 	
 	/**
 	 * Generated C++ forward declaration file suffix
 	 * 
-	 * @parameter expression="${mapping.forwardSuffix}" default-value="-fwd.hxx"
+	 * @parameter property="mapping.forwardSuffix" default-value="-fwd.hxx"
 	 */
 	private String forwardSuffix;
 
 	/**
 	 * Generate serialization functions. Serialization functions convert the object model back to XML.
 	 * 
-	 * @parameter expression="${mapping.genSerialization}" default-value="false"
+	 * @parameter property="mapping.genSerialization" default-value="false"
 	 */
 	private boolean genSerialization;
 
 	/**
 	 * Suppress generation of the parsing functions and constructors.
 	 * 
-	 * @parameter expression="${mapping.supParsing}" default-value="false"
+	 * @parameter property="mapping.supParsing" default-value="false"
 	 */
 	private boolean supParsing;
 
 	/**
 	 * Generate polymorphism-aware code. Specify this option if you use substitution groups or xsi:type.
 	 * 
-	 * @parameter expression="${mapping.genPolymorphic}" default-value="false"
+	 * @parameter property="mapping.genPolymorphic" default-value="false"
 	 */
 	private boolean genPolymorphic;
 
 	/**
 	 * Generate ostream insertion operators for generated types. This allows to easily print a fragment or the whole object model for debugging or logging.
 	 * 
-	 * @parameter expression="${mapping.genOstream}" default-value="false"
+	 * @parameter property="mapping.genOstream" default-value="false"
 	 */
 	private boolean genOstream;
 
 	/**
 	 * Generate documentation comments suitable for extraction by the Doxygen documentation system.
 	 * 
-	 * @parameter expression="${mapping.genDoxygen}" default-value="false"
+	 * @parameter property="mapping.genDoxygen" default-value="false"
 	 */
 	private boolean genDoxygen;
 	
 	/**
 	 * Generate comparison operators for complex types.
 	 * 
-	 * @parameter expression="${mapping.genComparison}" default-value="false"
+	 * @parameter property="mapping.genComparison" default-value="false"
 	 */
 	private boolean genComparison;
 
 	/**
 	 * Generate default constructors even for types that have required members.
 	 * 
-	 * @parameter expression="${mapping.genDefaultCtor}" default-value="false"
+	 * @parameter property="mapping.genDefaultCtor" default-value="false"
 	 */
 	private boolean genDefaultCtor;
 
 	/**
 	 * Generate constructors that expect an instance of a base type followed by all required members.
 	 * 
-	 * @parameter expression="${mapping.genFromBaseCtor}" default-value="false"
+	 * @parameter property="mapping.genFromBaseCtor" default-value="false"
 	 */
 	private boolean genFromBaseCtor;
 
 	/**
 	 * Generate accessors and modifiers as well as parsing and serialization code for XML Schema wildcards (any and anyAttribute).
 	 * 
-	 * @parameter expression="${mapping.genWildcard}" default-value="false"
+	 * @parameter property="mapping.genWildcard" default-value="false"
 	 */
 	private boolean genWildcard;
 	
 	/**
 	 * Generate workarounds for IntelliSense bugs in Visual Studio 2005 (8.0).
 	 * 
-	 * @parameter expression="${mapping.genIntellisense}" default-value="false"
+	 * @parameter property="mapping.genIntellisense" default-value="false"
 	 */
 	private boolean genIntellisense;
 
@@ -120,7 +120,7 @@ public class TreeMappingMojo
 	 * unset for default (K&R)
 	 * java, ucc
 	 * 
-	 * @parameter expression="${mapping.typeNaming}" default-value=""
+	 * @parameter property="mapping.typeNaming" default-value=""
 	 */
 	//private TypeNaming typeNaming;
 	private String typeNaming;
@@ -130,7 +130,7 @@ public class TreeMappingMojo
 	 * unset for default (K&R)
 	 * java, lcc
 	 * 
-	 * @parameter expression="${mapping.functionNaming}" default-value=""
+	 * @parameter property="mapping.functionNaming" default-value=""
 	 */
 	//private FunctionNaming functionNaming;
 	private String functionNaming;
@@ -138,7 +138,7 @@ public class TreeMappingMojo
 	/**
 	 * Treat only specified comma-separated list of elements as document roots.
 	 * 
-	 * @parameter expression="${mapping.rootElements}" default-value=""
+	 * @parameter property="mapping.rootElements" default-value=""
 	 */
 	private String rootElements;
 	
